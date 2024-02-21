@@ -2,8 +2,8 @@ import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
-import fetchImages from './pixabay-api';
-import createCard from './render-function';
+import fetchImages from './js/pixabay-api';
+import createCard from './js/render-function';
 
 const formEl = document.querySelector('form');
 const buttonSubmit = document.querySelector('button');
