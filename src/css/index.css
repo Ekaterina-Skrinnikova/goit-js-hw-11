@@ -16,7 +16,7 @@ body {
   margin-right: auto;
   width: 1152px;
 
-  outline: 1px solid tomato;
+  /* outline: 1px solid tomato; */
 }
 
 form {
