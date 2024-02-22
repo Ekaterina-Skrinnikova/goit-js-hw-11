@@ -5,11 +5,11 @@ import 'simplelightbox/dist/simple-lightbox.min.css';
 import fetchImages from './js/pixabay-api';
 import createCard from './js/render-function';
 
-const formEl = document.querySelector('form');
-const buttonSubmit = document.querySelector('button');
+const searchForm = document.querySelector('form');
+
 const spinner = document.querySelector('span');
 const galleryContainer = document.querySelector('.gallery');
-const optionsLigthBox = {
+const optionsLightBox = {
   captionsData: 'alt',
   captionDelay: 250,
 };
@@ -27,9 +27,9 @@ const optionsIziToast = {
   overlay: true,
   overlayClose: true,
 };
-const lightBox = new SimpleLightbox('.gallery a', optionsLigthBox);
+const lightBox = new SimpleLightbox('.gallery a', optionsLightBox);
 
-formEl.addEventListener('submit', onClickBtn);
+searchForm.addEventListener('submit', onClickBtn);
 
 function onClickBtn(e) {
   e.preventDefault();
@@ -47,7 +47,7 @@ function onClickBtn(e) {
 
         addCardMarkup(data.hits);
       })
-      .catch(error => iziToast.error(options));
+      .catch(error => iziToast.error(optionsIziToast));
   }
   resetForm();
 }
@@ -59,5 +59,5 @@ function addCardMarkup(images) {
 }
 
 function resetForm() {
-  formEl.reset();
+  searchForm.reset();
 }
